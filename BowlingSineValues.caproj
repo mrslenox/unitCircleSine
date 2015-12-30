@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>BowlingSineValues</name>
+    <description>Bowl by click/tapping on correct pin. </description>
+    <version>1.0.0.0</version>
+    <author>Mrs Lenox</author>
+    <author-email>lenoxrl@gmail.com</author-email>
+    <author-website></author-website>
+    <app-id>com.scirra.bowlingsinevalues</app-id>
+    <unique-id>jp71rr8j1qnt</unique-id>
+    <saved-with-version>21800</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>640</width>
+        <height>960</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Layout 1</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">No</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="TiledBackground2" sid="6194419838347392">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Rebecca\Desktop\background3.png" />
+        </object-type>
+        <object-type name="banana" sid="656068336738002">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="3912073089039347">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5178583091765511" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rebecca\Desktop\banana.png">
+                        <collision-poly>
+                            <point x="0.511719" y="0.542969" />
+                            <point x="0.6875" y="0.257813" />
+                            <point x="0.878906" y="0.121094" />
+                            <point x="0.890625" y="0.5" />
+                            <point x="0.761719" y="0.792969" />
+                            <point x="0.5" y="0.972656" />
+                            <point x="0" y="0.933594" />
+                            <point x="0.328125" y="0.65625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="1884821591191675">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="sq2" sid="3814020401604884">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="7248513466073751">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4659953979200965" speed="5">
+                    <frame duration="1" hotspotX="0.510417" hotspotY="0.51" original-source="C:\Users\Rebecca\Desktop\orangesnumbers\two.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.132353" />
+                            <point x="0.5" y="0" />
+                            <point x="0.84375" y="0.147059" />
+                            <point x="1" y="0.5" />
+                            <point x="0.84375" y="0.852941" />
+                            <point x="0.5" y="1" />
+                            <point x="0.140625" y="0.867647" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Directions" sid="5208462384194051">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="half" sid="1274552847962702">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="9195764095226214">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="407570046651265" speed="5">
+                    <frame duration="1" hotspotX="0.510417" hotspotY="0.51" original-source="C:\Users\Rebecca\Desktop\orangesnumbers\half.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.134328" />
+                            <point x="0.5" y="0" />
+                            <point x="0.84375" y="0.149254" />
+                            <point x="1" y="0.492537" />
+                            <point x="0.859375" y="0.865672" />
+                            <point x="0.5" y="1" />
+                            <point x="0.140625" y="0.865672" />
+                            <point x="0" y="0.492537" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="neghalf" sid="4356290981050419">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="7334226917789076">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9287837369401051" speed="5">
+                    <frame duration="1" hotspotX="0.510417" hotspotY="0.51" original-source="C:\Users\Rebecca\Desktop\orangesnumbers\neghalf.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.134328" />
+                            <point x="0.5" y="0" />
+                            <point x="0.84375" y="0.149254" />
+                            <point x="1" y="0.492537" />
+                            <point x="0.859375" y="0.865672" />
+                            <point x="0.5" y="1" />
+                            <point x="0.140625" y="0.865672" />
+                            <point x="0" y="0.492537" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="negsq2" sid="3543484883690812">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="9940450078607353">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3839589179994936" speed="5">
+                    <frame duration="1" hotspotX="0.510417" hotspotY="0.5" original-source="C:\Users\Rebecca\Desktop\orangesnumbers\neg2.png">
+                        <collision-poly>
+                            <point x="0.125" y="0.121212" />
+                            <point x="0.5" y="0" />
+                            <point x="0.859375" y="0.136364" />
+                            <point x="1" y="0.5" />
+                            <point x="0.84375" y="0.848485" />
+                            <point x="0.5" y="1" />
+                            <point x="0.140625" y="0.863636" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="sq3" sid="5600451170189159">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="1642618056133909">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="880294956001376" speed="5">
+                    <frame duration="1" hotspotX="0.510417" hotspotY="0.51" original-source="C:\Users\Rebecca\Desktop\orangesnumbers\three.png">
+                        <collision-poly>
+                            <point x="0.15625" y="0.147059" />
+                            <point x="0.5" y="0.0147059" />
+                            <point x="0.84375" y="0.147059" />
+                            <point x="1" y="0.5" />
+                            <point x="0.859375" y="0.867647" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15625" y="0.852941" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="neg3" sid="9666468275621586">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="5009405634413171">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2920028470707175" speed="5">
+                    <frame duration="1" hotspotX="0.510417" hotspotY="0.51" original-source="C:\Users\Rebecca\Desktop\orangesnumbers\neg3.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.132353" />
+                            <point x="0.5" y="0" />
+                            <point x="0.859375" y="0.132353" />
+                            <point x="1" y="0.5" />
+                            <point x="0.84375" y="0.852941" />
+                            <point x="0.5" y="0.985294" />
+                            <point x="0.15625" y="0.852941" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="one" sid="7423484507822615">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="1865492336587943">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2200698361540441" speed="5">
+                    <frame duration="1" hotspotX="0.510417" hotspotY="0.51" original-source="C:\Users\Rebecca\Desktop\orangesnumbers\one.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.132353" />
+                            <point x="0.5" y="0" />
+                            <point x="0.84375" y="0.147059" />
+                            <point x="1" y="0.5" />
+                            <point x="0.84375" y="0.852941" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15625" y="0.852941" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="neg1" sid="2605697819203073">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="9276705451133235">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1287223200947977" speed="5">
+                    <frame duration="1" hotspotX="0.510417" hotspotY="0.52" original-source="C:\Users\Rebecca\Desktop\orangesnumbers\neg1.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.134328" />
+                            <point x="0.5" y="0" />
+                            <point x="0.84375" y="0.149254" />
+                            <point x="1" y="0.492537" />
+                            <point x="0.84375" y="0.850746" />
+                            <point x="0.5" y="1" />
+                            <point x="0.140625" y="0.865672" />
+                            <point x="0" y="0.492537" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="zero" sid="3723976543012891">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="4452753113934708">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3906959175483908" speed="5">
+                    <frame duration="1" hotspotX="0.51" hotspotY="0.510417" original-source="C:\Users\Rebecca\Desktop\orangesnumbers\zero.png">
+                        <collision-poly>
+                            <point x="0.15625" y="0.149254" />
+                            <point x="0.5" y="0" />
+                            <point x="0.84375" y="0.149254" />
+                            <point x="1" y="0.492537" />
+                            <point x="0.84375" y="0.850746" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15625" y="0.850746" />
+                            <point x="0" y="0.492537" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Button" sid="741087728394636">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="player" sid="4363513013325633">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Variable1" sid="2022041085303678" type="boolean" />
+                <instance-variable name="winit" sid="2382104967518633" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="idle" pingpong="0" repeatcount="0" repeatto="0" sid="8951285067806086" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rebecca\Documents\CodeCanyon\activeden-5549613-magic-idols-game-file-and-license (1)\activeden-5549613-magic-idols-game\Magic Idols\art\Vicki Wenderlich\win.png" />
+                </animation>
+                <animation framecount="8" loop="0" name="winner" pingpong="0" repeatcount="0" repeatto="0" sid="6940909472458242" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.221429" y="0.184524" />
+                            <point x="0.5" y="0.0595238" />
+                            <point x="0.771429" y="0.190476" />
+                            <point x="0.85" y="0.5" />
+                            <point x="0.664286" y="0.720238" />
+                            <point x="0.5" y="0.803571" />
+                            <point x="0.321429" y="0.732143" />
+                            <point x="0.15" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rebecca\Documents\CodeCanyon\activeden-5549613-magic-idols-game-file-and-license (1)\activeden-5549613-magic-idols-game\Magic Idols\art\Vicki Wenderlich\monkey_walk_right_2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rebecca\Documents\CodeCanyon\activeden-5549613-magic-idols-game-file-and-license (1)\activeden-5549613-magic-idols-game\Magic Idols\art\Vicki Wenderlich\Duquekarl edit\front2.png">
+                        <collision-poly>
+                            <point x="0.214286" y="0.178571" />
+                            <point x="0.5" y="0.0595238" />
+                            <point x="0.771429" y="0.190476" />
+                            <point x="0.735714" y="0.5" />
+                            <point x="0.664286" y="0.720238" />
+                            <point x="0.5" y="0.803571" />
+                            <point x="0.321429" y="0.732143" />
+                            <point x="0.221429" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rebecca\Documents\CodeCanyon\activeden-5549613-magic-idols-game-file-and-license (1)\activeden-5549613-magic-idols-game\Magic Idols\art\Vicki Wenderlich\monkey_walk_right_1.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rebecca\Documents\CodeCanyon\activeden-5549613-magic-idols-game-file-and-license (1)\activeden-5549613-magic-idols-game\Magic Idols\art\Vicki Wenderlich\win.png">
+                        <collision-poly>
+                            <point x="0.221429" y="0.184524" />
+                            <point x="0.5" y="0.0595238" />
+                            <point x="0.771429" y="0.190476" />
+                            <point x="0.85" y="0.5" />
+                            <point x="0.664286" y="0.720238" />
+                            <point x="0.5" y="0.803571" />
+                            <point x="0.321429" y="0.732143" />
+                            <point x="0.15" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.214286" y="0.178571" />
+                            <point x="0.5" y="0.0595238" />
+                            <point x="0.771429" y="0.190476" />
+                            <point x="0.735714" y="0.5" />
+                            <point x="0.664286" y="0.720238" />
+                            <point x="0.5" y="0.803571" />
+                            <point x="0.321429" y="0.732143" />
+                            <point x="0.221429" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="7" loop="0" name="hit" pingpong="0" repeatcount="1" repeatto="0" sid="6023659869264459" speed="8">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rebecca\Desktop\win.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rebecca\Desktop\win3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rebecca\Desktop\win4.png" />
+                    <frame duration="1" hotspotX="0.47973" hotspotY="0.488" original-source="C:\Users\Rebecca\Documents\CodeCanyon\activeden-5549613-magic-idols-game-file-and-license (1)\activeden-5549613-magic-idols-game\Magic Idols\art\Vicki Wenderlich\Duquekarl edit\front1.png">
+                        <collision-poly>
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.47973" hotspotY="0.488">
+                        <collision-poly>
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rebecca\Desktop\win6.png" />
+                    <frame duration="1" hotspotX="0.512" hotspotY="0.48125" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="winner" sid="9996050624436437">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5115665280983763" speed="5">
+                    <frame duration="1" hotspotX="0.501887" hotspotY="0.504425" original-source="C:\Users\Rebecca\Desktop\wub.png">
+                        <collision-poly>
+                            <point x="0.120755" y="0.283186" />
+                            <point x="0.498113" y="0.0884956" />
+                            <point x="0.909434" y="0.212389" />
+                            <point x="0.992453" y="0.495575" />
+                            <point x="0.864151" y="0.681416" />
+                            <point x="0.498113" y="0.761062" />
+                            <point x="0.158491" y="0.628319" />
+                            <point x="0.0490566" y="0.495575" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text2" sid="6968184189129385">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="SineValue" sid="7388124434626441">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Touch" sid="7411037636037778">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="touchedtarget" sid="4409798656065572">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="40166483531861" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ball" sid="4254975194774624">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="9011314465123814">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="7927715800562135">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="8320381156236644">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4988944442914621" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rebecca\Desktop\ball.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pin2" sid="1056015034087613">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="5827878071494994">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9351633775279597" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Rebecca\Desktop\oie_transparent (11).png">
+                        <collision-poly>
+                            <point x="0.24" y="0.123711" />
+                            <point x="0.5" y="0.0103093" />
+                            <point x="0.76" y="0.123711" />
+                            <point x="0.8" y="0.494845" />
+                            <point x="0.82" y="0.907216" />
+                            <point x="0.5" y="0.969072" />
+                            <point x="0.2" y="0.896907" />
+                            <point x="0.2" y="0.494845" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="11" />
+        <global-instance type="Touch" uid="4">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

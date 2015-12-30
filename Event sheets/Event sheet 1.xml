@@ -1,0 +1,930 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="ballrolling" sid="5087296172035727" static="0" type="number">0</variable>
+        <variable constant="0" name="Score" sid="4230672440762399" static="0" type="number">16</variable>
+        <event-block sid="55316178771194">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="1548026849221288" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="7326431858562663" type="Directions">
+                    <param id="0" name="Text">&quot;Bowling for Bananas:Most values have 2 angles you&apos;ll need to bowl to by clicking/touching along correct angle or on pin. Only 1 ball on screen at a time.  Bananas to go:&quot; &amp;Score   </param>
+                </action>
+                <action id="0" name="Set text" sid="4349037437420976" type="SineValue">
+                    <param id="0" name="Text">&quot;Sine value :&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="751450067737822">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9135825905554661" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="2442869643496745" type="Directions">
+                    <param id="0" name="Text">&quot;This  is bananas!! Press button to play again &quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="7049065704476711" type="Button">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;1em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="9386535376647281" type="Button">
+                    <param id="0" name="Property name">&quot;color&quot;</param>
+                    <param id="1" name="Value">&quot;yellow&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="8529797446718313" type="Button">
+                    <param id="0" name="Property name">&quot;background-color&quot;</param>
+                    <param id="1" name="Value">&quot;green&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="1829757313806175" type="Button">
+                    <param id="0" name="Text">&quot;Sine winner! Click to play again&quot;</param>
+                </action>
+                <action id="2" name="Set visible" sid="3352010505820517" type="Button">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9213205251109407" type="winner">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="8654050890554914" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2558456425543006">
+            <conditions>
+                <condition id="0" name="On clicked" sid="6088645327639564" type="Button" />
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="6141016370867862" type="System" />
+                <action id="-21" name="Reset global variables" sid="9447418326249723" type="System" />
+                <action id="2" name="Set visible" sid="6427035437677973" type="Button">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8402242783694507">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9964552502877104" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">16</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="1314204040899205" type="sq2">
+                    <param id="0" name="X">544</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9885223372092194">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5092835588525352" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="5901170571560665" type="pin2">
+                    <param id="0" name="Unique ID">9</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="6780994968068684" type="sq2" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="4903449459293294" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="4009424969970216" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="1576112713603079" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="7143832693434364" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1003136727162701" type="ball" />
+                <action id="-9" name="Set value" sid="149617605339029" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2858624848673534">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="5698702982453091" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="5304812308159533" type="player">
+                    <param id="0" name="Animation">&quot;winner&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="3526694813900848" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4767696365682382">
+            <conditions>
+                <condition id="4" name="On finished" sid="4761295470851988" type="player">
+                    <param id="0" name="Animation">&quot;winner&quot;</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="3100884666180765" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="6539940380913137" type="pin2">
+                    <param id="0" name="Angle">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7186130269584734">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1865295348642902" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="5163619874913074" type="pin2">
+                    <param id="0" name="Unique ID">32</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="6222559175857683" type="sq2" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="1870381025972021" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">80</param>
+                    <param id="3" name="Y">170 + random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="2001036512021658" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="3060269075326572" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="9755349825138717" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6856041694634237" type="ball" />
+                <action id="-9" name="Set value" sid="4673992162820927" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="636148444034496">
+            <conditions>
+                <condition id="4" name="On finished" sid="214738205094988" type="player">
+                    <param id="0" name="Animation">&quot;winner&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8485608998666845" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">14</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4401037988859572" type="sq2" />
+                <action id="-3" name="Set position" sid="4568166647970799" type="neghalf">
+                    <param id="0" name="X">544</param>
+                    <param id="1" name="Y">194</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="1770550381249052" type="pin2">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2678493716094927">
+            <conditions>
+                <condition id="4" name="On finished" sid="4065346805813226" type="player">
+                    <param id="0" name="Animation">&quot;winner&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="5510514027828968" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">12</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7378292485821768" type="neghalf" />
+                <action id="-3" name="Set position" sid="9792442091626336" type="zero">
+                    <param id="0" name="X">534</param>
+                    <param id="1" name="Y">194</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="9165251849246291" type="pin2">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5510003329967622">
+            <conditions>
+                <condition id="4" name="On finished" sid="7645964864281126" type="player">
+                    <param id="0" name="Animation">&quot;winner&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="2290217441721172" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="5350475342870364" type="zero" />
+                <action id="-3" name="Set position" sid="4158154415315814" type="neg3">
+                    <param id="0" name="X">534</param>
+                    <param id="1" name="Y">194</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="7437044076954672" type="pin2">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1619322863251209">
+            <conditions>
+                <condition id="4" name="On finished" sid="6898709434206503" type="player">
+                    <param id="0" name="Animation">&quot;winner&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1041480486374176" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">8</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6286532162826484" type="neg3" />
+                <action id="-3" name="Set position" sid="3034535381967197" type="sq3">
+                    <param id="0" name="X">534</param>
+                    <param id="1" name="Y">194</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="414282561596607" type="pin2">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1373221553731956">
+            <conditions>
+                <condition id="4" name="On finished" sid="318045102173124" type="player">
+                    <param id="0" name="Animation">&quot;winner&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1142534982433147" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4247698761787243" type="sq3" />
+                <action id="-3" name="Set position" sid="6389730714836092" type="neg1">
+                    <param id="0" name="X">534</param>
+                    <param id="1" name="Y">194</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="4301503505926223" type="pin2">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2250144303647865">
+            <conditions>
+                <condition id="4" name="On finished" sid="6724681964554153" type="player">
+                    <param id="0" name="Animation">&quot;winner&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="6699341607344229" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="455521210561719" type="neg1" />
+                <action id="-3" name="Set position" sid="506629135585969" type="half">
+                    <param id="0" name="X">534</param>
+                    <param id="1" name="Y">194</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="184549303708026" type="pin2">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2596000600085845">
+            <conditions>
+                <condition id="4" name="On finished" sid="1106147288526608" type="player">
+                    <param id="0" name="Animation">&quot;winner&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="2297985009465012" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4476354698973008" type="half" />
+                <action id="-3" name="Set position" sid="7190524381174817" type="one">
+                    <param id="0" name="X">534</param>
+                    <param id="1" name="Y">194</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="6706962487204828" type="pin2">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6833726551170607">
+            <conditions>
+                <condition id="4" name="On finished" sid="163333215795834" type="player">
+                    <param id="0" name="Animation">&quot;winner&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="5178250523598898" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6057242806663071" type="one" />
+                <action id="-3" name="Set position" sid="1653367716383396" type="negsq2">
+                    <param id="0" name="X">534</param>
+                    <param id="1" name="Y">194</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="9657035702107125" type="pin2">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4800191474563274">
+            <conditions>
+                <condition id="14" name="On tap" sid="3841691690077392" type="Touch" />
+                <condition id="-14" name="Compare variable" sid="2672056915147325" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4153293098854622" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="7637490389308459" type="player">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="4062589438934291" type="player">
+                    <param id="0" name="Object">ball</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="2251464050109669" type="ball">
+                    <param id="0" name="X">Touch.X</param>
+                    <param id="1" name="Y">Touch.Y</param>
+                </action>
+                <action id="-16" name="Wait" sid="8123484139957052" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="2560157486672513" type="player">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9512149571814347">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1157472489477486" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Rotate clockwise" sid="1952311668455284" type="pin2">
+                    <param id="0" name="Degrees">90</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7610333726413835">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="5488162568651471" type="ball" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5150728987878044" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6195356604289572">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3820256659625277" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="4374033339073892" type="pin2">
+                    <param id="0" name="Unique ID">13</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="3535368278561997" type="neghalf" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="7505353552035632" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="8301275078825432" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="5546140760613898" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="5783082594373353" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6008596561923608" type="ball" />
+                <action id="-9" name="Set value" sid="2039573158420473" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="964331112142657">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2575954178541193" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="6365871086088284" type="pin2">
+                    <param id="0" name="Unique ID">25</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="2928340737033714" type="neghalf" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="998629364851428" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="8503460435915435" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="1927190028085011" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="5564541918634078" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1856216857632093" type="ball" />
+                <action id="-9" name="Set value" sid="3741616340697295" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6694089141218894">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="9848784128051804" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="7034960101835679" type="pin2">
+                    <param id="0" name="Unique ID">15</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="3101010289303631" type="zero" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="2310440507471081" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="2077944437503433" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="7977048465632791" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="413997628434227" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="9862812214486943" type="ball" />
+                <action id="-9" name="Set value" sid="4087868485335013" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3621752401149012">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3490718513956687" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="8749412846812687" type="pin2">
+                    <param id="0" name="Unique ID">29</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="1425727874118701" type="zero" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="4599750786526099" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="3969980601397293" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="4457289406971817" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="8975522572862204" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="8162526815968733" type="ball" />
+                <action id="-9" name="Set value" sid="3352084855578933" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7220242969498291">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6219969475645005" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="3219269512453611" type="pin2">
+                    <param id="0" name="Unique ID">17</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="423593235847666" type="neg3" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="5440378094147915" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="1095181873738756" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="2445870479289003" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="9067278597748983" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="7464112349708321" type="ball" />
+                <action id="-9" name="Set value" sid="3979868022291628" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5910313429674564">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8563759410045254" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="7482517803394333" type="pin2">
+                    <param id="0" name="Unique ID">19</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="4660055194021278" type="neg3" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="7339134041977569" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="8846401284834648" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="5475333060144819" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="2499234531257308" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="9740243505312798" type="ball" />
+                <action id="-9" name="Set value" sid="3832406807459333" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4242998021630641">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3827730961776041" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="3648168900868161" type="pin2">
+                    <param id="0" name="Unique ID">14</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="4219866451050951" type="sq3" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="3966054350314752" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="2413060171573377" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="5896624187410673" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="8951079731354356" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1738846679890744" type="ball" />
+                <action id="-9" name="Set value" sid="5012128844313336" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3175361139428731">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3304702791651247" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="916590502783311" type="pin2">
+                    <param id="0" name="Unique ID">35</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="2292149697907656" type="sq3" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="2038758797589866" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="7314283192883132" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="2171261210242961" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="2161700626612198" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6966667450051087" type="ball" />
+                <action id="-9" name="Set value" sid="9794306403763833" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6477184844226708">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2475650318758555" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="1222915454602374" type="pin2">
+                    <param id="0" name="Unique ID">18</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="9062775101346156" type="neg1" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="1942654472440212" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="3594088406372271" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="7133753132550104" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="9626318437498817" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="968070553242887" type="ball" />
+                <action id="-9" name="Set value" sid="4877860734797881" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6767172008986259">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="4468017400556641" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="5601314306150197" type="pin2">
+                    <param id="0" name="Unique ID">8</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="3194054056000342" type="half" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="4139974966198994" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="6251991456619272" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="4342994196557924" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="3258052457757041" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="7933375107516506" type="ball" />
+                <action id="-9" name="Set value" sid="8688974186817839" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="465819513911685">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="4626920870222776" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="5775690048213239" type="pin2">
+                    <param id="0" name="Unique ID">30</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="8897486620014813" type="half" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="2202957315561996" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="4256151558582766" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="7424558215490793" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="6665159520011857" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="549688397325224" type="ball" />
+                <action id="-9" name="Set value" sid="4384206991574729" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9180499218378533">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2073787524242365" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="3059281385754291" type="pin2">
+                    <param id="0" name="Unique ID">36</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="5168850706081209" type="one" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="6811354522917612" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="9800667222751604" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="8317395472463818" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="1650791711439551" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6423176999245385" type="ball" />
+                <action id="-9" name="Set value" sid="5673879183643452" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5072473993662397">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8528392305574441" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="4241096553882212" type="pin2">
+                    <param id="0" name="Unique ID">16</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="8913499577780889" type="negsq2" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="3374337822854991" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="7691158042094402" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="9711236305874387" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="7117251993220439" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1296119446837165" type="ball" />
+                <action id="-9" name="Set value" sid="1828828190635103" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7342263691616032">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3414125877434672" type="ball">
+                    <param id="0" name="Object">pin2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="4986120849999369" type="pin2">
+                    <param id="0" name="Unique ID">22</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="4745019208575852" type="negsq2" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="8967322626777808" type="System">
+                    <param id="0" name="Object to create">banana</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">50 </param>
+                    <param id="3" name="Y">150 +random(500)</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="945113438804212" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="5385188400782615" type="pin2">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="8660558207364842" type="player">
+                    <param id="0" name="Instance variable">winit</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="2931307263344178" type="ball" />
+                <action id="-9" name="Set value" sid="6567445612621426" type="System">
+                    <param id="0" name="Variable">ballrolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3989328067759305">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6278239814849394" type="ball">
+                    <param id="0" name="Object">player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="1743042529032226" type="player">
+                    <param id="0" name="Animation">&quot;hit&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
